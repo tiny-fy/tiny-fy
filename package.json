@@ -1,0 +1,25 @@
+{
+  "name": "tiny-fy",
+  "version": "1.0.0",
+  "description": "This is gonna be awesome!\r Or is it?\r Yes it is, lest I be wrong.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whitneywooyy/tiny-fy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whitneywooyy/tiny-fy/issues"
+  },
+  "homepage": "https://github.com/whitneywooyy/tiny-fy",
+  "dependencies": {
+    "firebase": "^2.3.0",
+    "hexo-cli": "^0.1.8",
+    "react": "^0.13.3",
+    "react-router": "^1.0.0-rc1"
+  }
+}
