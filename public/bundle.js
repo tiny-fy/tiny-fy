@@ -24262,7 +24262,8 @@
 
 	var React = __webpack_require__(1);
 	var Main = __webpack_require__(200);
-	var Home = __webpack_require__(201);
+	var Nav = __webpack_require__(203);
+	var Content = __webpack_require__(202);
 	var Router = __webpack_require__(157);
 	var IndexRoute = Router.IndexRoute;
 	var Route = Router.Route;
@@ -24270,7 +24271,7 @@
 	module.exports = React.createElement(
 		Route,
 		{ path: '/', component: Main },
-		React.createElement(IndexRoute, { component: Home })
+		React.createElement(IndexRoute, { component: Content })
 	);
 
 /***/ },
@@ -24280,6 +24281,9 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
+	var RouteHandler = __webpack_require__(157).RouteHandler;
+	var HeaderImg = __webpack_require__(204);
+	var Nav = __webpack_require__(203);
 
 	var Main = React.createClass({
 		displayName: 'Main',
@@ -24287,8 +24291,10 @@
 		render: function render() {
 			return React.createElement(
 				'div',
-				null,
-				'Hello, World!'
+				{ className: 'container' },
+				React.createElement(HeaderImg, null),
+				React.createElement(Nav, null),
+				this.props.children
 			);
 		}
 	});
@@ -24296,24 +24302,127 @@
 	module.exports = Main;
 
 /***/ },
-/* 201 */
+/* 201 */,
+/* 202 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(157);
+	var Nav = __webpack_require__(203);
+
+	var Content = React.createClass({
+		displayName: 'Content',
+
+		getInitialState: function getInitialState() {
+			return {
+				posts: []
+			};
+		},
+		render: function render() {
+			return React.createElement(
+				'div',
+				{ className: 'row' },
+				React.createElement(
+					'div',
+					{ className: 'col-xs-12 col-sm-8' },
+					'Main Column'
+				),
+				React.createElement(
+					'div',
+					{ className: 'col-xs-12 col-sm-4' },
+					'Sidebar'
+				)
+			);
+		}
+	});
+
+	module.exports = Content;
+
+/***/ },
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	var React = __webpack_require__(1);
 
-	var Home = React.createClass({
-		displayName: "Home",
+	var Nav = React.createClass({
+		displayName: "Nav",
 
 		render: function render() {
 			return React.createElement(
-				"h2",
-				{ className: "text-center" },
-				"Search me!"
+				"nav",
+				{ className: "navbar navbar-default" },
+				React.createElement(
+					"div",
+					{ className: "container-fluid" },
+					React.createElement(
+						"div",
+						{ className: "navbar-header" },
+						React.createElement(
+							"ul",
+							{ className: "nav navbar-nav" },
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"a",
+									{ href: "#" },
+									"Home"
+								)
+							),
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"a",
+									{ href: "#" },
+									"Blog"
+								)
+							),
+							React.createElement(
+								"li",
+								null,
+								React.createElement(
+									"a",
+									{ href: "#" },
+									"Contact"
+								)
+							)
+						)
+					)
+				)
 			);
 		}
 	});
+
+	module.exports = Nav;
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var Router = __webpack_require__(157);
+
+	var HeaderImg = React.createClass({
+		displayName: 'HeaderImg',
+
+		render: function render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement('img', { className: 'img-responsive', src: 'https://images.unsplash.com/photo-1441448770220-76743f9e6af6?q=80&fm=jpg&s=38de76fbc0c63fb457e0389b50c9fc32' })
+			);
+		}
+
+	});
+
+	module.exports = HeaderImg;
 
 /***/ }
 /******/ ]);
